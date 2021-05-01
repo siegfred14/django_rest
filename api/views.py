@@ -6,7 +6,7 @@ from django.http import JsonResponse
 
 def home(request):
     data = {
-        "message" : "This is a json response"
+        "message": "This is a json response"
     }
 
     return JsonResponse(data)
