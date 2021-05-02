@@ -11,12 +11,6 @@
 #
 #     return JsonResponse(data)
 
-# from rest_framework.views import APIView
-# from rest_framework.response import Response
-# from rest_framework import authentication, permissions
-# from django.contrib.auth.models import User
-
-
 # The request is made up of two things
  # The Endpoint
  # The Methods
@@ -24,3 +18,15 @@
  # - GET Read
  # - PUT/PATCH Updating
  # - DELETE Deleting
+
+from rest_framework.views import generics
+from rest_framework import status
+from rest_framework.response import Response
+
+from .models import Student
+from .serializers import StudentSerializers
+
+
+class StudentViews(generics.CreateAPIViews):
+    queryset - student.objects.all()
+    serializer_class - StudentSerializers
