@@ -19,14 +19,14 @@
  # - PUT/PATCH Updating
  # - DELETE Deleting
 
-from rest_framework.views import generics
+from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
 
 from .models import Student
-from .serializers import StudentSerializers
+from .serializers import StudentSerializer
 
 
-class StudentViews(generics.CreateAPIViews):
-    queryset - student.objects.all()
-    serializer_class - StudentSerializers
+class StudentViews(generics.CreateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
