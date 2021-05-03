@@ -52,3 +52,9 @@ class StudentViews(generics.CreateAPIView):
 class GetStudentViews(generics.ListAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
+
+# create an endpoint to update
+class UpdateStudentViews(generics.UpdateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
