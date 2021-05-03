@@ -30,3 +30,8 @@ from .serializers import StudentSerializer
 class StudentViews(generics.CreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
+
+class GetStudentViews(generics.ListAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
