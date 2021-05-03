@@ -39,7 +39,7 @@ from .serializers import StudentSerializer
 #     # def perform_create(self, serializer):
 #     #     return super().perform_create(serializer)
 
-@api_view
+@api_view(['POST'])
 def create_student(request):
     student = Student.objects.all()
     serializer = StudentSerializer(data=request.data)
