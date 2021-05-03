@@ -27,9 +27,13 @@ from .models import Student
 from .serializers import StudentSerializer
 
 
+# making a post request
 class StudentViews(generics.CreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
+    # def perform_create(self, serializer):
+    #     return super().perform_create(serializer)
 
 
 class GetStudentViews(generics.ListAPIView):
