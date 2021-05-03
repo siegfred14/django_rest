@@ -58,3 +58,8 @@ class GetStudentViews(generics.ListAPIView):
 class UpdateStudentViews(generics.UpdateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+
+
+class DeleteStudentViews(generics.DestroyAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializer
