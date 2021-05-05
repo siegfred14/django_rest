@@ -26,6 +26,6 @@ class UserTest(APITestCase):
 
         self.assertEqual(User.objects.count(), 2)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(response.data['username'], data['username'])
         self.assertEqual(response.data['email'], data['email'])
+        self.assertEqual(response.data['username'], data['username'])
         self.assertFalse('password' in response.data)
