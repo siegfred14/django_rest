@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(min_length=8)
 
     def create(self, validated_data):
-        user = User.objects.create(validated_data['email'],
+        user = User.objects.create_user(validated_data['email'],
                                    validated_data['username'],
                                    validated_data['password'])
         return user
